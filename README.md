@@ -1,14 +1,16 @@
 # registration
-Registration assignment for RU due 4/22
+*Registration assignment for java CS class*
 
-Project Description
+##### Project Description
 You will build part of a college's course registration system (similar to WebReg, though considerably less complex). The system will keep track of a catalog of courses that students can take. It will allow the user (a student) to view and search the course catalog, and to add (register for) and drop (withdraw from) courses.
 
-The following restrictions apply:
+**The following restrictions apply:**
 
 All courses meet only once per week, for one class period.
 Days will be denoted by the following letters: 
+
 M - Monday, T - Tuesday, W - Wednesday, H - Thursday, F - Friday, S - Saturday. There are no Sunday courses.
+
 Class periods (time slots) are numbered from 1 to 9.
 A student cannot register for a course that is not in the catalog.
 There is a limit on the number of courses a student may take in one semester.
@@ -21,29 +23,27 @@ Course.java contains the definition of a class called Course. A Course object re
 
 Make sure all of your fields are private and your method signatures are written exactly as defined below.
 
-
 *You can assume that all parameters being passed into the constructors will be in their valid ranges.*
 
 *You can also assume that the objects passed into the ‘equals’ or ‘compareTo’ methods will NOT be null.”
 
+**Course.java:**
 
+1. _public_ __Course__(int department, int courseNum, String name, char day, int timeSlot, int credits)
+    * department and course numbers can range from 0 to 999
+    * the day and time slot are used to create a Period object – do not store the day and time slot individually
+    * credits range from 1-4
+    * each course maintains a list (array) of students – maximum number of students for a course is 20
 
-Course.java :
-
-public Course(int department, int courseNum, String name, char day, int timeSlot, int credits)
-department and course numbers can range from 0 to 999
-the day and time slot are used to create a Period object – do not store the day and time slot individually
-credits range from 1-4
-each course maintains a list (array) of students – maximum number of students for a course is 20
-getter methods for all of the variables passed into the constructor:
-public int getDepartment() //returns the department number
-public int getCourseNumber() //returns the course number
-public String getName() //returns the name of the course
-public Period getPeriod() //returns the period of the course
-public int getCredits() //returns the number of credits for the course
-public Student[] getRoster() //returns the roster – list of students who are enrolled in the course
-public String toString()
-return the course in the same format as in catalog.txt: “department:courseNum [name] period credits:credits”
-ex: 198:111 [Introduction to Computer Science] T5 credits:4
-public boolean equals(Course other)
-two courses are considered equal if their department and course numbers are the same
+2. getter methods for all of the variables passed into the constructor:
+    * _public int_ __getDepartment__() //returns the department number
+    * _public int_ __getCourseNumber__() //returns the course number
+    * _public String_ __getName__() //returns the name of the course
+    * _public Period_ __getPeriod__() //returns the period of the course
+    * _public int_ __getCredits__() //returns the number of credits for the course
+    * _public Student[]_ __getRoster__() //returns the roster – list of students who are enrolled in the course
+    * _public String_ __toString__()
+3. return the course in the same format as in catalog.txt: “department:courseNum [name] period credits:credits”
+    * ex: 198:111 [Introduction to Computer Science] T5 credits:4
+     * _public boolean_ __equals__(Course other)
+    * two courses are considered equal if their department and course numbers are the same
