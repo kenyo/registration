@@ -1,2 +1,2 @@
 # registration
-registration assignment for RU due 4/22
+Registration assignment for RU due 4/22
